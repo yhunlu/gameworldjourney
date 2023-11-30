@@ -1,19 +1,17 @@
-import { HStack, Image, Text } from '@chakra-ui/react';
+import { HStack, Image, useColorMode } from '@chakra-ui/react';
 import logoColor from '../assets/gwj-high-resolution-logo-transparent.webp';
 import logoWhite from '../assets/gwj-high-resolution-logo-white-transparent.webp';
-import theme from '../theme';
+import ColorModeSwitch from './ColorModeSwitch';
 
 const NavBar = () => {
+  const { colorMode } = useColorMode();
+
+  const logoSwitch = colorMode === 'dark' ? logoWhite : logoColor;
+
   return (
-    <HStack>
-      {/* check if it is dark mode change logo in image */}
-      <Image
-        src={theme.config.initialColorMode === 'dark' ? logoWhite : logoColor}
-        alt="logo"
-        boxSize="60px"
-        width={'auto'}
-      />
-      <Text>NavBar</Text>
+    <HStack justifyContent={'space-between'} p={5}>
+      <Image src={logoSwitch} alt="logo" boxSize="60px" width={'auto'} />
+      <ColorModeSwitch />
     </HStack>
   );
 };
