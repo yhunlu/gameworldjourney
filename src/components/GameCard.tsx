@@ -8,18 +8,34 @@ interface Props {
   game: Game;
 }
 
+/**
+ * Render a card component for a game.
+ *
+ * @param game - The game object.
+ * @returns The rendered card component.
+ */
 const GameCard = ({ game }: Props) => {
   return (
+    // Card component
     <Card>
+      {/* Image component */}
       <Image src={getCroppedImageUrl(game.background_image)} />
+
+      {/* Card body */}
       <CardBody>
+        {/* Game name */}
         <Heading fontSize={'xl'} noOfLines={2}>
           {game.name}
         </Heading>
+
+        {/* Platform icon list and critic score */}
         <HStack justifyContent={'space-between'}>
+          {/* Platform icon list */}
           <PlatformIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
           />
+
+          {/* Critic score */}
           <CriticScore score={game.metacritic} />
         </HStack>
       </CardBody>
