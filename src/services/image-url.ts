@@ -5,6 +5,9 @@
  * @returns The URL of the cropped image.
  */
 const getCroppedImageUrl = (url: string) => {
+  if (!url) {
+    return '';
+  }
   // Define the target string to search for in the URL
   const target = 'media/';
 
