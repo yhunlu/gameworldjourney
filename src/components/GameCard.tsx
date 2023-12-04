@@ -23,13 +23,8 @@ const GameCard = ({ game }: Props) => {
 
       {/* Card body */}
       <CardBody>
-        {/* Game name */}
-        <Heading fontSize={'xl'} noOfLines={2}>
-          {game.name}
-        </Heading>
-
         {/* Platform icon list and critic score */}
-        <HStack justifyContent={'space-between'}>
+        <HStack justifyContent={'space-between'} marginBottom={3}>
           {/* Platform icon list */}
           <PlatformIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
@@ -38,6 +33,8 @@ const GameCard = ({ game }: Props) => {
           {/* Critic score */}
           <CriticScore score={game.metacritic} />
         </HStack>
+        {/* Game name */}
+        <Heading fontSize={'xl'}>{game.name}</Heading>
       </CardBody>
     </Card>
   );
