@@ -4,7 +4,11 @@ import logoWhite from '../assets/gwj-high-resolution-logo-white-transparent.webp
 import ColorModeSwitch from './ColorModeSwitch';
 import SearchInput from './SearchInput';
 
-const NavBar = () => {
+interface Props {
+  onSearch: (searchText: string) => void;
+}
+
+const NavBar = ({ onSearch }: Props) => {
   const { colorMode } = useColorMode();
 
   const logoSwitch = colorMode === 'dark' ? logoWhite : logoColor;
@@ -12,7 +16,7 @@ const NavBar = () => {
   return (
     <HStack p={5}>
       <Image src={logoSwitch} alt="logo" boxSize="60px" width={'auto'} />
-      <SearchInput />
+      <SearchInput onSearch={onSearch} />
       <ColorModeSwitch />
     </HStack>
   );

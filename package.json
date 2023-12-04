@@ -1,5 +1,6 @@
 {
   "name": "-",
+  "proxy": "https://api.rawg.io/api",
   "private": true,
   "version": "0.0.0",
   "type": "module",
