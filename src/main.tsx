@@ -4,7 +4,7 @@ import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 import App from './App.tsx';
 import './index.css';
 import theme from './theme.ts';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
