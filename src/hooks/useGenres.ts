@@ -16,9 +16,9 @@ const useGenres = () =>
     queryFn: () =>
       apiClient
         .get<FetchResponse<Genre>>(`/${CACHE_KEY_GENRES}`)
-        .then((res) => res.data),
+        .then((res) => res.data.results),
     staleTime: 1000 * 60 * 60 * 24, // 24 hours
-    initialData: { count: genres.length, results: genres },
+    initialData: genres,
   });
 
 export default useGenres;
