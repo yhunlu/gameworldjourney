@@ -17,7 +17,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
         {selectedPlatform?.name || 'Platforms'}
       </MenuButton>
       <MenuList>
-        {data?.map((platform) => (
+        {data?.results.map((platform) => (
           <MenuItem
             fontWeight={
               platform.id === selectedPlatform?.id ? 'bold' : 'normal'
