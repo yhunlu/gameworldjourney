@@ -4,10 +4,9 @@ import {
   CACHE_KEY_PLATFORMS,
   CACHE_KEY_PLATFORMS_URL,
 } from '../utils/constants';
-import apiClient from '../services/api-client';
-import { FetchResponse } from './useData';
+import apiClient, { FetchResponse } from '../services/api-client';
 
-interface Platform {
+export interface Platform {
   id: number;
   name: string;
   slug: string;
