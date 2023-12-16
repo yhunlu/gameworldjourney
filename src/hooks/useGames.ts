@@ -33,6 +33,7 @@ const useGames = (gameQuery: GameQuery) =>
     getNextPageParam: (lastPage, allPages) => {
       return lastPage.next ? allPages.length + 1 : undefined;
     },
+    initialPageParam: 1,
   });
 
 export default useGames;
