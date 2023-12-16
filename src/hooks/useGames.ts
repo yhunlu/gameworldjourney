@@ -13,6 +13,7 @@ export interface Game {
   parent_platforms: { platform: Platform }[];
   metacritic: number;
   rating_top: number;
+  released: string;
 }
 
 const useGames = (gameQuery: GameQuery) =>
@@ -34,6 +35,7 @@ const useGames = (gameQuery: GameQuery) =>
       return lastPage.next ? allPages.length + 1 : undefined;
     },
     initialPageParam: 1,
+    staleTime: 1000 * 60 * 60 * 24, // 24 hours
   });
 
 export default useGames;

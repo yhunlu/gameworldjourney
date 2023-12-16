@@ -4,6 +4,7 @@ import PlatformIconList from './PlatformIconList';
 import CriticScore from './CriticScore';
 import getCroppedImageUrl from '../services/image-url';
 import Emoji from './Emoji';
+import ReleaseDate from './ReleaseDate';
 
 interface Props {
   game: Game;
@@ -24,6 +25,7 @@ const GameCard = ({ game }: Props) => {
 
       {/* Card body */}
       <CardBody>
+        <ReleaseDate date={game.released} />
         {/* Platform icon list and critic score */}
         <HStack justifyContent={'space-between'} marginBottom={3}>
           {/* Platform icon list */}
