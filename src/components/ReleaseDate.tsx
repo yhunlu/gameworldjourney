@@ -10,7 +10,7 @@ const ReleaseDate = ({ date }: Props) => {
     <Badge
       marginY={1.5}
       marginBottom={3}
-      colorScheme={'gray'}
+      colorScheme="brand"
       fontSize={'14px'}
       paddingX={2}
       borderRadius={'4px'}
