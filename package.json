@@ -16,7 +16,6 @@
     "@emotion/styled": "^11.11.0",
     "@tanstack/react-query": "^5.14.0",
     "@tanstack/react-query-devtools": "^5.14.0",
-    "@vercel/speed-insights": "^1.0.0",
     "axios": "^1.6.2",
     "framer-motion": "^10.16.9",
     "ms": "^2.1.3",
