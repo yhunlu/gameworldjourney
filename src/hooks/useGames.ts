@@ -10,6 +10,8 @@ const apiClient = new APIClient<Game>(`/${CACHE_KEY_GAMES}`);
 export interface Game {
   id: number;
   name: string;
+  slug: string;
+  description_raw: string;
   background_image: string;
   parent_platforms: { platform: Platform }[];
   metacritic: number;
@@ -18,7 +20,7 @@ export interface Game {
 }
 
 const useGames = () => {
-  const gameQuery = useGameQueryStore(s => s.gameQuery)
+  const gameQuery = useGameQueryStore((s) => s.gameQuery);
 
   return useInfiniteQuery<FetchResponse<Game>, Error>({
     queryKey: [CACHE_KEY_GAMES, gameQuery],
@@ -40,7 +42,6 @@ const useGames = () => {
     initialPageParam: 1,
     staleTime: ms('24h'),
   });
-}
- 
+};
 
 export default useGames;
