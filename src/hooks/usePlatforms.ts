@@ -6,14 +6,9 @@ import {
   CACHE_KEY_PLATFORMS_URL,
 } from '../utils/constants';
 import APIClient from '../services/api-client';
+import { Platform } from '../entities/Platform';
 
 const apiClient = new APIClient<Platform>(`/${CACHE_KEY_PLATFORMS_URL}`);
-
-export interface Platform {
-  id: number;
-  name: string;
-  slug: string;
-}
 
 const usePlatforms = () =>
   useQuery({

@@ -1,4 +1,4 @@
-import { Game } from '../hooks/useGames';
+import { Game } from '../entities/Game';
 import { Card, CardBody, HStack, Heading, Image } from '@chakra-ui/react';
 import PlatformIconList from './PlatformIconList';
 import CriticScore from './CriticScore';
@@ -31,7 +31,7 @@ const GameCard = ({ game }: Props) => {
         <HStack justifyContent={'space-between'} marginBottom={3}>
           {/* Platform icon list */}
           <PlatformIconList
-          // cannot use map if parent_platforms is undefined
+            // cannot use map if parent_platforms is undefined
             platforms={game.parent_platforms?.map((p) => p.platform)}
           />
 
