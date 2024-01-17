@@ -1,12 +1,12 @@
-import ms from 'ms';
 import { useQuery } from '@tanstack/react-query';
+import ms from 'ms';
 import platforms from '../data/platforms';
+import Platform from '../entities/Platform';
+import APIClient from '../services/api-client';
 import {
   CACHE_KEY_PLATFORMS,
   CACHE_KEY_PLATFORMS_URL,
 } from '../utils/constants';
-import APIClient from '../services/api-client';
-import { Platform } from '../entities/Platform';
 
 const apiClient = new APIClient<Platform>(`/${CACHE_KEY_PLATFORMS_URL}`);
 

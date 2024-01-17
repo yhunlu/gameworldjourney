@@ -1,9 +1,9 @@
-import ms from 'ms';
 import { useQuery } from '@tanstack/react-query';
-import { CACHE_KEY_GENRES } from '../utils/constants';
+import ms from 'ms';
 import genres from '../data/genres';
+import Genre from '../entities/Genre';
 import APIClient from '../services/api-client';
-import { Genre } from '../entities/Genre';
+import { CACHE_KEY_GENRES } from '../utils/constants';
 
 const apiClient = new APIClient<Genre>(`/${CACHE_KEY_GENRES}`);
 const useGenres = () =>
