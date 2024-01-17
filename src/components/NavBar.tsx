@@ -3,6 +3,7 @@ import logoColor from '../assets/gwj-high-resolution-logo-transparent.webp';
 import logoWhite from '../assets/gwj-high-resolution-logo-white-transparent.webp';
 import ColorModeSwitch from './ColorModeSwitch';
 import SearchInput from './SearchInput';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const { colorMode } = useColorMode();
@@ -11,7 +12,9 @@ const NavBar = () => {
 
   return (
     <HStack p={5}>
-      <Image src={logoSwitch} alt="logo" boxSize="60px" width={'auto'} />
+      <Link to="/">
+        <Image src={logoSwitch} alt="logo" boxSize="60px" width={'auto'} />
+      </Link>
       <SearchInput />
       <ColorModeSwitch />
     </HStack>
