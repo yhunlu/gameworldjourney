@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import ms from 'ms';
-import genres from '../data/genres';
-import Genre from '../entities/Genre';
+import { genres } from '../data';
+import { Genre } from '../entities';
 import APIClient from '../services/api-client';
 import { CACHE_KEY_GENRES } from '../utils/constants';
 

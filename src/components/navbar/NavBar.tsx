@@ -1,9 +1,7 @@
 import { HStack, Image, useColorMode } from '@chakra-ui/react';
-import logoColor from '../assets/gwj-high-resolution-logo-transparent.webp';
-import logoWhite from '../assets/gwj-high-resolution-logo-white-transparent.webp';
-import ColorModeSwitch from './ColorModeSwitch';
-import SearchInput from './SearchInput';
 import { Link } from 'react-router-dom';
+import { ColorModeSwitch, SearchInput } from '.';
+import { logoColor, logoWhite } from '../../assets';
 
 const NavBar = () => {
   const { colorMode } = useColorMode();

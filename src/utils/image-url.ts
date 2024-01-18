@@ -1,4 +1,4 @@
-import noImage from '../assets/no-image-placeholder.webp';
+import { noImage } from '../assets';
 
 /**
  * Returns the URL of the cropped image.
