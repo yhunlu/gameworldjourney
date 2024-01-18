@@ -1,11 +1,6 @@
 import { SimpleGrid, Text } from '@chakra-ui/react';
-import Game from '../entities/Game';
-import Genre from '../entities/Genre';
-import Platform from '../entities/Platform';
-import Publisher from '../entities/Publisher';
-import CriticScore from './CriticScore';
-import DefinitionItem from './DefinitionItem';
-import ReleaseDate from './ReleaseDate';
+import { Game, Genre, Platform, Publisher } from '../../entities';
+import { CriticScore, DefinitionItem, ReleaseDate } from '../common';
 
 interface Props {
   game: Game;

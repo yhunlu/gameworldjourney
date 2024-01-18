@@ -6,18 +6,17 @@ import {
   List,
   ListItem,
 } from '@chakra-ui/react';
-import useGenres from '../hooks/useGenres';
-import getCroppedImageUrl from '../services/image-url';
-import useGameQueryStore from '../store';
-import { skeleton } from '../utils';
-import GenreSkeleton from './GenreSkeleton';
+import { GenreSkeleton } from '.';
+import { useGenres } from '../../hooks';
+import useGameQueryStore from '../../store';
+import { skeleton } from '../../utils';
+import getCroppedImageUrl from '../../utils/image-url';
 
 const GenreList = () => {
   const { data, isLoading } = useGenres();
   const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
   const setSelectedGenreId = useGameQueryStore((s) => s.setGenreId);
 
-  // if (error) return <Text>{error}</Text>;
   return (
     <>
       <Heading fontSize="2xl" marginBottom={3} marginTop={5}>
