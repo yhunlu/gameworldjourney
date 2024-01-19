@@ -1,5 +1,5 @@
 import { Heading } from '@chakra-ui/react';
-import { useGenre, usePlatform } from '../../hooks';
+import { useGenre, usePlatform, useTag } from '../../hooks';
 import useGameQueryStore from '../../store';
 
 const GameHeading = () => {
@@ -9,7 +9,11 @@ const GameHeading = () => {
   const platformId = useGameQueryStore((s) => s.gameQuery.platformId);
   const platform = usePlatform(platformId);
 
-  const heading = `${platform?.name || ''} ${genre?.name || ''} Games`;
+  const tagId = useGameQueryStore((s) => s.gameQuery.tagId);
+  const tag = useTag(tagId);
+
+  const heading = `${platform?.name || ''} ${genre?.name || ''} ${tag?.name || ''
+    } Games`;
 
   return (
     <Heading as="h1" marginY={5} fontSize="3xl" mb={4}>
