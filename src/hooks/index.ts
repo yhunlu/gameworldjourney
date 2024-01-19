@@ -5,4 +5,6 @@ export { default as useGenres } from './useGenres';
 export { default as usePlatform } from './usePlatform';
 export { default as usePlatforms } from './usePlatforms';
 export { default as useScreenshots } from './useScreenshots';
+export { default as useTag } from './useTag';
+export { default as useTags } from './useTags';
 export { default as useTrailers } from './useTrailers';
