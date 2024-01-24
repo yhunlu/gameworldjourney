@@ -6,11 +6,11 @@ import { CACHE_KEY_STORES } from '../utils/constants';
 
 const apiClient = new APIClient<Store>(`/${CACHE_KEY_STORES}`);
 
-const useStore = () =>
+const useStores = () =>
   useQuery({
     queryKey: [CACHE_KEY_STORES],
     queryFn: apiClient.getAll,
     staleTime: ms('24h'),
   });
 
-export default useStore;
+export default useStores;
