@@ -5,6 +5,7 @@ import {
   GameHeading,
   PlatformSelector,
   SortSelector,
+  StoreSelector,
   TagSelector,
 } from '../components/home';
 
@@ -35,7 +36,12 @@ const HomePage = () => {
             <Box marginRight={5}>
               <SortSelector />
             </Box>
-            <TagSelector />
+            <Box marginRight={5}>
+              <TagSelector />
+            </Box>
+            <Box marginRight={5}>
+              <StoreSelector />
+            </Box>
           </Flex>
         </Box>
         <GameGrid />
