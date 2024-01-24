@@ -13,11 +13,12 @@ const useGames = () => {
   return useInfiniteQuery<FetchResponse<Game>, Error>({
     queryKey: [CACHE_KEY_GAMES, gameQuery],
     queryFn: ({ pageParam = 1 }) => {
-      const { genreId, platformId, tagId, sortOrder, searchText } = gameQuery;
+      const { genreId, platformId, tagId, storeId, sortOrder, searchText } = gameQuery;
       const params = {
         genres: genreId,
         parent_platforms: platformId,
         tags: tagId,
+        stores: storeId,
         ordering: sortOrder,
         search: searchText,
         page: pageParam,

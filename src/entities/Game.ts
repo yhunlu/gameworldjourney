@@ -7,7 +7,7 @@ export default interface Game {
   genres: Genre[];
   publishers: Publisher[];
   tags: Tag[];
-  stores: Store[];
+  stores: { store: Store }[];
   description_raw: string;
   background_image: string;
   parent_platforms: { platform: Platform }[];
