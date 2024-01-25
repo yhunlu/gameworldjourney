@@ -28,7 +28,7 @@ const GameAttributes = ({ game }: Props) => {
           <CriticScore score={game.metacritic} />
         </DefinitionItem>
       )}
-      {game.rating! && game.rating_top! && (
+      {game.rating!>0 && game.rating_top!>0 && (
         <DefinitionItem term="Rating">
           <RatingScore rating={game.rating} ratingTop={game.rating_top} />
         </DefinitionItem>
