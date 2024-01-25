@@ -18,7 +18,7 @@ const RatingScore = ({ rating, ratingTop }: RatingProps) => {
                 );
             } else {
                 stars.push(
-                    <Box as="span" key={i} color="brand.200" fontSize="20px">
+                    <Box as="span" key={i} color="gray.300" fontSize="20px">
                         ★
                     </Box>
                 );
