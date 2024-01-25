@@ -1,6 +1,11 @@
 import { SimpleGrid, Text } from '@chakra-ui/react';
 import { Game, Genre, Platform, Publisher, Store } from '../../entities';
-import { CriticScore, DefinitionItem, ReleaseDate } from '../common';
+import {
+  CriticScore,
+  DefinitionItem,
+  RatingScore,
+  ReleaseDate,
+} from '../common';
 
 interface Props {
   game: Game;
@@ -9,32 +14,51 @@ interface Props {
 const GameAttributes = ({ game }: Props) => {
   return (
     <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4, '2xl': 5 }} as="dl">
-      <DefinitionItem term="Platforms">
-        {game.parent_platforms?.map(({ platform }: { platform: Platform }) => (
-          <Text key={platform.id}>{platform.name}</Text>
-        ))}
-      </DefinitionItem>
-      <DefinitionItem term="Metascore">
-        <CriticScore score={game.metacritic} />
-      </DefinitionItem>
-      <DefinitionItem term="Genres">
-        {game.genres.map((genre: Genre) => (
-          <Text key={genre.id}>{genre.name}</Text>
-        ))}
-      </DefinitionItem>
-      <DefinitionItem term="Released Date">
-        <ReleaseDate date={game.released} />
-      </DefinitionItem>
-      <DefinitionItem term="Publishers">
-        {game.publishers?.map((publisher: Publisher) => (
-          <Text key={publisher.id}>{publisher.name}</Text>
-        ))}
-      </DefinitionItem>
-      <DefinitionItem term="Stores">
-        {game.stores?.map(({ store }: { store: Store }) => (
-          <Text key={store.id}>{store.name}</Text>
-        ))}
-      </DefinitionItem>
+      {game.parent_platforms! && (
+        <DefinitionItem term="Platforms">
+          {game.parent_platforms?.map(
+            ({ platform }: { platform: Platform }) => (
+              <Text key={platform.id}>{platform.name}</Text>
+            )
+          )}
+        </DefinitionItem>
+      )}
+      {game.metacritic! && (
+        <DefinitionItem term="Metascore">
+          <CriticScore score={game.metacritic} />
+        </DefinitionItem>
+      )}
+      {game.rating! && game.rating_top! && (
+        <DefinitionItem term="Rating">
+          <RatingScore rating={game.rating} ratingTop={game.rating_top} />
+        </DefinitionItem>
+      )}
+      {game.genres! && (
+        <DefinitionItem term="Genres">
+          {game.genres.map((genre: Genre) => (
+            <Text key={genre.id}>{genre.name}</Text>
+          ))}
+        </DefinitionItem>
+      )}
+      {game.released! && (
+        <DefinitionItem term="Released Date">
+          <ReleaseDate date={game.released} />
+        </DefinitionItem>
+      )}
+      {game.publishers! && (
+        <DefinitionItem term="Publishers">
+          {game.publishers?.map((publisher: Publisher) => (
+            <Text key={publisher.id}>{publisher.name}</Text>
+          ))}
+        </DefinitionItem>
+      )}
+      {game.stores! && (
+        <DefinitionItem term="Stores">
+          {game.stores?.map(({ store }: { store: Store }) => (
+            <Text key={store.id}>{store.name}</Text>
+          ))}
+        </DefinitionItem>
+      )}
     </SimpleGrid>
   );
 };
