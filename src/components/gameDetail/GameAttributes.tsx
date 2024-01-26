@@ -5,6 +5,7 @@ import {
   DefinitionItem,
   RatingScore,
   ReleaseDate,
+  SuggestionsCount,
 } from '../common';
 
 interface Props {
@@ -14,6 +15,26 @@ interface Props {
 const GameAttributes = ({ game }: Props) => {
   return (
     <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4, '2xl': 5 }} as="dl">
+      {game.released! && (
+        <DefinitionItem term="Released Date">
+          <ReleaseDate date={game.released} />
+        </DefinitionItem>
+      )}
+      {game.rating! > 0 && game.rating_top! > 0 && (
+        <DefinitionItem term="Rating">
+          <RatingScore rating={game.rating} ratingTop={game.rating_top} />
+        </DefinitionItem>
+      )}
+      {game.metacritic! && (
+        <DefinitionItem term="Metascore">
+          <CriticScore score={game.metacritic} />
+        </DefinitionItem>
+      )}
+      {game.suggestions_count! > 0 && (
+        <DefinitionItem term="Suggestions">
+          <SuggestionsCount count={game.suggestions_count} />
+        </DefinitionItem>
+      )}
       {game.parent_platforms! && (
         <DefinitionItem term="Platforms">
           {game.parent_platforms?.map(
@@ -23,26 +44,11 @@ const GameAttributes = ({ game }: Props) => {
           )}
         </DefinitionItem>
       )}
-      {game.metacritic! && (
-        <DefinitionItem term="Metascore">
-          <CriticScore score={game.metacritic} />
-        </DefinitionItem>
-      )}
-      {game.rating!>0 && game.rating_top!>0 && (
-        <DefinitionItem term="Rating">
-          <RatingScore rating={game.rating} ratingTop={game.rating_top} />
-        </DefinitionItem>
-      )}
       {game.genres! && (
         <DefinitionItem term="Genres">
           {game.genres.map((genre: Genre) => (
             <Text key={genre.id}>{genre.name}</Text>
           ))}
-        </DefinitionItem>
-      )}
-      {game.released! && (
-        <DefinitionItem term="Released Date">
-          <ReleaseDate date={game.released} />
         </DefinitionItem>
       )}
       {game.publishers! && (
