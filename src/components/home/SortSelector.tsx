@@ -10,6 +10,7 @@ const SortSelector = () => {
     { value: '-released', label: 'Release date' },
     { value: '-metacritic', label: 'Popularity' },
     { value: '-rating', label: 'Average rating' },
+    { value: '-rating -metacritic -suggestions_count', label: 'Most famous' },
   ];
 
   const sortOrder = useGameQueryStore((s) => s.gameQuery.sortOrder);
