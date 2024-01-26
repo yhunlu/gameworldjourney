@@ -14,5 +14,6 @@ export default interface Game {
   metacritic: number;
   rating: number;
   rating_top: number;
+  suggestions_count: number;
   released: string;
 }
