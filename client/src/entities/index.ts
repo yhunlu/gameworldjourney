@@ -6,3 +6,4 @@ export type { default as Screenshot } from './Screenshot';
 export type { default as Store } from './Store';
 export type { default as Tag } from './Tag';
 export type { default as Trailer } from './Trailer';
+export type { default as User } from './User';
