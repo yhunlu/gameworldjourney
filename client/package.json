@@ -1,8 +1,8 @@
 {
-  "name": "game-world-journey",
+  "name": "gameworldjourney",
   "proxy": "https://api.rawg.io/api",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.3",
   "type": "module",
   "scripts": {
     "dev": "vite",
