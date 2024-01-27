@@ -4,6 +4,7 @@ import * as dotenv from 'dotenv';
 import express from 'express';
 import morgan from 'morgan';
 import connectDB from './config/connectDB.js';
+import userRouter from './routers/userRouter.js';
 
 dotenv.config();
 
@@ -18,7 +19,10 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
-app.get('/', (req, res) => {
+app.use('/db/users', userRouter);
+// app.use('/db/games', gameRouter);
+
+app.get('/db', (req, res) => {
   res.send('API is running...');
 });
 
