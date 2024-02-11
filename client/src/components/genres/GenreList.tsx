@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react';
 import { GenreSkeleton } from '.';
 import { useGenres } from '../../hooks';
-import useGameQueryStore from '../../store';
+import { useGameQueryStore } from '../../store';
 import { skeleton } from '../../utils';
 import getCroppedImageUrl from '../../utils/image-url';
 

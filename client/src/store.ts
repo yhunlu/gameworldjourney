@@ -9,6 +9,10 @@ interface GameQuery {
   searchText?: string;
 }
 
+interface UserQuery {
+  sub?: string;
+}
+
 interface GameQueryStore {
   gameQuery: GameQuery;
   setSearchText: (searchText: string) => void;
@@ -17,6 +21,11 @@ interface GameQueryStore {
   setTagId: (tagId: number) => void;
   setStoreId: (storeId: number) => void;
   setSortOrder: (sortOrder: string) => void;
+}
+
+interface UserQueryStore {
+  userQuery: UserQuery;
+  setSub: (sub: string) => void;
 }
 
 const useGameQueryStore = create<GameQueryStore>((set) => ({
@@ -34,4 +43,9 @@ const useGameQueryStore = create<GameQueryStore>((set) => ({
     set((store) => ({ gameQuery: { ...store.gameQuery, sortOrder } })),
 }));
 
-export default useGameQueryStore;
+const useUserQueryStore = create<UserQueryStore>((set) => ({
+  userQuery: {} as UserQuery,
+  setSub: (sub) => set(() => ({ userQuery: { sub } })),
+}));
+
+export { useGameQueryStore, useUserQueryStore };

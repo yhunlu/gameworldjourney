@@ -54,6 +54,11 @@ const Signin = ({ user }: Props) => {
         }
     };
 
+    const signout = () => {
+        setData(null || user);
+        localStorage.removeItem('data');
+    }
+
     useEffect(() => {
         userExist();
     }, []);
@@ -82,7 +87,7 @@ const Signin = ({ user }: Props) => {
                             </Box>
                         </MenuItem>
                         <MenuItem>Settings</MenuItem>
-                        <MenuItem>Logout</MenuItem>
+                        <MenuItem onClick={signout}>Logout</MenuItem>
                     </MenuList>
                 </Menu>
             )}

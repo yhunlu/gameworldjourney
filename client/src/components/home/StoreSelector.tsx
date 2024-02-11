@@ -1,7 +1,7 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { BsChevronDown } from 'react-icons/bs';
 import { useStore, useStores } from '../../hooks';
-import useGameQueryStore from '../../store';
+import { useGameQueryStore } from '../../store';
 
 const StoreSelector = () => {
     const { data } = useStores();
