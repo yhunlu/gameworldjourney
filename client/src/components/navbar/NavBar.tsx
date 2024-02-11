@@ -2,7 +2,7 @@ import { HStack, Image, useColorMode } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { ColorModeSwitch, SearchInput, Signin } from '.';
 import { logoColor, logoWhite } from '../../assets';
-import useGameQueryStore from '../../store';
+import { useGameQueryStore } from '../../store';
 
 const NavBar = () => {
   const { colorMode } = useColorMode();
